@@ -33,3 +33,54 @@ footer {
   font-size: 2rem;
   font-family: 'Poppins', sans-serif;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 1rem auto 1rem auto;
+  width: 80%;
+  background: url(../Assets/theatre.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+  justify-content: center;
+}
+
+.grid-item {
+  border: 2px solid gray;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(222, 184, 135, 0.2);
+  border-radius: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: antiquewhite;
+}
+
+.grid-item > p {
+  margin-top: 0.6rem;
+}
+
+.grid-item > hr {
+  width: 100%;
+}
+
+.graphic {
+  height: 15vw;
+  width: 50%;
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 40%;
+  background-color: burlywood;
+  border: none;
+  margin: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+  filter: invert(100%);
+}
