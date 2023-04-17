@@ -84,3 +84,74 @@ footer {
 .btn:hover {
   filter: invert(100%);
 }
+
+.comment {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: peru;
+}
+
+.comment h2 {
+  font-size: 3rem;
+  font-family: monospace;
+}
+
+.comment > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.comment > img {
+  width: 50%;
+}
+
+.comment > table {
+  border: 2px solid black;
+  width: 50%;
+}
+
+.comment > form > input,
+.comment > form > textarea {
+  width: 40%;
+  padding: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+  border-radius: 1rem;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.comment > form > input:focus,
+.comment > form > textarea:focus,
+.comment > form > input:hover,
+.comment > form > textarea:hover {
+  outline: none;
+  box-shadow: 0 0 3px 4px;
+}
+
+.comment > form > button {
+  padding: 1rem;
+  width: 20%;
+  font-size: 1rem;
+  border-radius: 20%;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  margin-top: 0.5rem;
+  background-color: chocolate;
+  color: antiquewhite;
+}
+
+.comment > form > button:hover {
+  box-shadow: 0 0 3px 4px;
+  filter: invert(100%);
+}
+
+.fa-circle-xmark {
+  align-self: flex-end;
+  font-size: 2rem;
+  cursor: pointer;
+}
