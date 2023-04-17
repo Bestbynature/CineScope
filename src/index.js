@@ -14,20 +14,19 @@ const component = () => {
 };
 logoDiv.appendChild(component());
 
-const getMovies = async() => {
-  const response = await fetch(`https://api.tvmaze.com/shows`)
-  const data = await response.json()
+const getMovies = async () => {
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const data = await response.json();
   return data;
-}
-getMovies()
-const pageLoader = async() => {
-      const movieBank = await getMovies();
-      database(movieBank)
-}
-
+};
+getMovies();
+const pageLoader = async () => {
+  const movieBank = await getMovies();
+  database(movieBank);
+};
 
 window.onload = () => {
-     pageLoader()
-}
+  pageLoader();
+};
 
-export default pageLoader
+export default pageLoader;

@@ -58,11 +58,11 @@ footer {
   color: antiquewhite;
 }
 
-.grid-item>p {
+.grid-item > p {
   margin-top: 0.6rem;
 }
 
-.grid-item>hr {
+.grid-item > hr {
   width: 100%;
 }
 
@@ -72,7 +72,7 @@ footer {
 }
 
 .btn {
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5px;
   width: 40%;
   background-color: burlywood;
