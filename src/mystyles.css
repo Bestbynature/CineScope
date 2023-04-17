@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: bisque;
+  font-family: 'Pacifico', cursive;
+}
+
+header {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  border: 2px solid green;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+.logo {
+  width: 50%;
+  height: 70%;
+  cursor: pointer;
+  border: 5px solid black;
+}
+
+footer {
+  border: 3px solid black;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
