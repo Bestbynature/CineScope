@@ -34,6 +34,10 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
+main {
+  width: 100%;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -92,6 +96,8 @@ footer {
   align-items: center;
   padding: 2rem;
   background-color: peru;
+  width: 100%;
+  border: 2px solid green;
 }
 
 .comment h2 {
@@ -133,6 +139,14 @@ footer {
   box-shadow: 0 0 3px 4px;
 }
 
+.link button {
+  cursor: pointer;
+  border-radius: 0.7rem;
+  padding: 0.7rem;
+  margin: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
 .comment > form > button {
   padding: 1rem;
   width: 20%;
@@ -145,6 +159,10 @@ footer {
   color: antiquewhite;
 }
 
+.link button:hover {
+  filter: invert(100%);
+}
+
 .comment > form > button:hover {
   box-shadow: 0 0 3px 4px;
   filter: invert(100%);
@@ -154,4 +172,23 @@ footer {
   align-self: flex-end;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.comment .episode-class {
+  border: 5px solid black;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+.comment .episode-class tr {
+  border: 2px solid black;
+}
+
+.link {
+  text-align: right;
+}
+
+.link a {
+  text-decoration: none;
+  color: #fff;
 }

@@ -8,8 +8,15 @@ const oneMovie = async (a) => {
   return data;
 };
 
+const epiGetter = async (a) => {
+  const response = await fetch(`https://api.tvmaze.com/shows/${a}/episodes`);
+  const data = await response.json();
+  return data;
+};
+
 const commentPop = async (a) => {
   const movie = await oneMovie(a);
+  const episodes = await epiGetter(a);
   main.innerHTML = '';
   const commentSection = document.createElement('div');
   commentSection.className = 'comment';
@@ -22,6 +29,8 @@ const commentPop = async (a) => {
         <tr><td>Ended on: ${movie.ended} </td><td>Rating: ${movie.rating.average} </td>
         </tr>
     </table>
+    <p>The first twenty episodes<p>
+    <table class="episode-class"></table>
     <p>For more information about the movie, please click <a href="${movie.officialSite}">this link</a></p>
     <h3>Comments (2)</h3>
     <div class="user-comments"></div>
@@ -31,6 +40,15 @@ const commentPop = async (a) => {
         <textarea cols="30" rows="10" placeholder="Your insights"></textarea>
         <button type="submit">Comment</button>
     </form>`;
+
+  const episodeClass = document.querySelector('.episode-class');
+  let count = 0;
+  while (count <= 20) {
+    episodeClass.innerHTML += `<tr><td>Episode Name: ${episodes[count].name} </td><td>Air-Date: ${episodes[count].airdate} </td><td class="link">
+      <a href="${episodes[count].url}"><button>Link to the episode</button></a></td></tr>`;
+    count += 1;
+  }
+
   main.scrollIntoView({ behavior: 'smooth' });
 };
 
@@ -38,9 +56,8 @@ document.addEventListener('click', (e) => {
   let collector = e.target.classList;
   collector = Array.from(collector);
   if (collector.includes('fa-circle-xmark')) {
-    // main.scrollIntoView()
     dbcaller();
   }
 });
 
-export { commentPop, main };
+export default commentPop;
