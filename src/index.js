@@ -26,6 +26,6 @@ document.addEventListener('click', (e) => {
   if (collector.includes('btn-comment')) {
     commentPop(id);
   } else if (collector.includes('fa-heart')) {
-    // likesFunction();
+    
   }
 });
