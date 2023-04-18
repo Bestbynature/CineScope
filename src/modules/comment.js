@@ -52,28 +52,22 @@ const commentPop = async (a) => {
   }
 
   main.scrollIntoView({ behavior: 'smooth' });
-
-  const payLoad = {
-    item_id: a,
-  };
+const divCom = document.querySelector('.user-comments')
+const payLoad2 = {"item_id": a}
+  commentFunction(divCom, payLoad2)
 
   document.querySelector('.comment-post').addEventListener('click', (e) => {
     e.preventDefault();
-    // console.log('submit');
 
     const userName = document.querySelector('.user-name').value;
     const userComment = document.querySelector('.user-comment').value;
 
-    payLoad.username = userName;
-    payLoad.comment = userComment;
+    const payLoad = { item_id: a,  username: userName,  comment: userComment  };
   
-    // clear input field
     document.querySelector('.user-name').value = '';
     document.querySelector('.user-comment').value = '';
 
-    console.log(payLoad);
-
-    commentFunction(payLoad, e);
+    commentFunction(payLoad, e, b);
   });
 
 };

@@ -19,18 +19,20 @@ const commentPoster = async (a) => {
   await fetch(url, options);
 };
 
-const commentsFunction = async (a, e) => {
-  await commentPoster(a);
-  
-  const commentData= await commentGetter(a);
-
-  const commentDiv = e.target.parentElement.previousElementSibling;
-
-  commentData.forEach(comment => {
-    commentDiv.innerHTML += `
-    <p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>
-    `
+const commentsFunction = async (...args) => {
+  if(args.length === 3){
+    await commentPoster(args[0]);
+    const commentData= await commentGetter(args[0]);
+    const commentDiv = args[1].target.parentElement.previousElementSibling;
+    commentData.forEach(comment => {
+    commentDiv.innerHTML += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`
   });
+  }else{
+    const commentData= await commentGetter(args[1]);
+    commentData.forEach(comment => {
+    args[0].innerHTML += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`
+  });
+  }
 };
 
 export default commentsFunction;
