@@ -1,4 +1,3 @@
-// xns1ROZAkOXmd23EMLBX
 const likeGetter = async () => {
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/xns1ROZAkOXmd23EMLBX/likes';
   const response = await fetch(url);
@@ -14,7 +13,6 @@ const likePoster = async (a) => {
     headers: { 'Content-Type': 'application/json; charset=UTF-8' },
   };
   await fetch(url, options);
-  //   const data = response.json();
 };
 
 const likesFunction = async (...args) => {
