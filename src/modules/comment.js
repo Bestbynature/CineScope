@@ -1,4 +1,5 @@
 import dbcaller from './dbcaller.js';
+import commentFunction from './commentFunction.js';
 
 const main = document.querySelector('main');
 
@@ -34,11 +35,11 @@ const commentPop = async (a) => {
     <p>For more information about the movie, please click <a href="${movie.officialSite}">this link</a></p>
     <h3>Comments (2)</h3>
     <div class="user-comments"></div>
-    <form>
+    <form id="form">
         <h3>Add a comment</h3>
-        <input type="text" placeholder="Your name" required>
-        <textarea cols="30" rows="10" placeholder="Your insights"></textarea>
-        <button type="submit">Comment</button>
+        <input class="user-name" type="text" placeholder="Your name" required>
+        <textarea class="user-comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
+        <button class="comment-post" type="submit">Comment</button>
     </form>`;
 
   const episodeClass = document.querySelector('.episode-class');
@@ -50,6 +51,23 @@ const commentPop = async (a) => {
   }
 
   main.scrollIntoView({ behavior: 'smooth' });
+  const divCom = document.querySelector('.user-comments');
+  const payLoad2 = { item_id: a };
+  commentFunction(divCom, payLoad2);
+
+  document.querySelector('.comment-post').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const userName = document.querySelector('.user-name').value;
+    const userComment = document.querySelector('.user-comment').value;
+
+    const payLoad = { item_id: a, username: userName, comment: userComment };
+
+    document.querySelector('.user-name').value = '';
+    document.querySelector('.user-comment').value = '';
+    const b = userName;
+    commentFunction(payLoad, e, b);
+  });
 };
 
 document.addEventListener('click', (e) => {

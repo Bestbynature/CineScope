@@ -192,3 +192,7 @@ main {
   text-decoration: none;
   color: #fff;
 }
+
+.user-comments {
+  border: 2px solid brown;
+}
