@@ -57,9 +57,9 @@ const commentPop = async (a) => {
     item_id: a,
   };
 
-  document.querySelector('#form').addEventListener('submit', (e) => {
+  document.querySelector('.comment-post').addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('submit');
+    // console.log('submit');
 
     const userName = document.querySelector('.user-name').value;
     const userComment = document.querySelector('.user-comment').value;
@@ -70,15 +70,12 @@ const commentPop = async (a) => {
     // clear input field
     document.querySelector('.user-name').value = '';
     document.querySelector('.user-comment').value = '';
-  
-  });
-  
-  const commentPost = document.querySelector('.comment-post');
-  
 
-  commentPost.addEventListener('click', (e) => {
+    console.log(payLoad);
+
     commentFunction(payLoad, e);
-  })
+  });
+
 };
 
 document.addEventListener('click', (e) => {
@@ -90,7 +87,3 @@ document.addEventListener('click', (e) => {
 });
 
 export default commentPop;
-
-// else if (collector.includes('comment-post')) {
-//   commentFunction(movieId);
-// }
