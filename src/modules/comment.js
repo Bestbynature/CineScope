@@ -1,5 +1,5 @@
 import dbcaller from './dbcaller.js';
-import commentFunction from './commentFunction.js'
+import commentFunction from './commentFunction.js';
 
 const main = document.querySelector('main');
 
@@ -14,7 +14,6 @@ const epiGetter = async (a) => {
   const data = await response.json();
   return data;
 };
-
 
 const commentPop = async (a) => {
   const movie = await oneMovie(a);
@@ -52,9 +51,9 @@ const commentPop = async (a) => {
   }
 
   main.scrollIntoView({ behavior: 'smooth' });
-const divCom = document.querySelector('.user-comments')
-const payLoad2 = {"item_id": a}
-  commentFunction(divCom, payLoad2)
+  const divCom = document.querySelector('.user-comments');
+  const payLoad2 = { item_id: a };
+  commentFunction(divCom, payLoad2);
 
   document.querySelector('.comment-post').addEventListener('click', (e) => {
     e.preventDefault();
@@ -62,14 +61,13 @@ const payLoad2 = {"item_id": a}
     const userName = document.querySelector('.user-name').value;
     const userComment = document.querySelector('.user-comment').value;
 
-    const payLoad = { item_id: a,  username: userName,  comment: userComment  };
-  
+    const payLoad = { item_id: a, username: userName, comment: userComment };
+
     document.querySelector('.user-name').value = '';
     document.querySelector('.user-comment').value = '';
-
+    const b = userName;
     commentFunction(payLoad, e, b);
   });
-
 };
 
 document.addEventListener('click', (e) => {
@@ -77,7 +75,7 @@ document.addEventListener('click', (e) => {
   collector = Array.from(collector);
   if (collector.includes('fa-circle-xmark')) {
     dbcaller();
-  } 
+  }
 });
 
 export default commentPop;
