@@ -25,7 +25,5 @@ document.addEventListener('click', (e) => {
   collector = Array.from(collector);
   if (collector.includes('btn-comment')) {
     commentPop(id);
-  } else if (collector.includes('fa-heart')) {
-    
   }
 });
