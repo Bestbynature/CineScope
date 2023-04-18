@@ -2,7 +2,9 @@
 
 const main = document.querySelector('main');
 
+
 const database = (itemArr) => {
+  
   main.innerHTML = '';
   const wrapper = document.createElement('div');
   wrapper.className = 'wrapper';
@@ -14,7 +16,8 @@ const database = (itemArr) => {
 
     card.innerHTML = `<img src='${movie.image.original}' alt="Movie graphic" title='${movie.name}' class="graphic">
         <p>${movie.name}</p><hr>
-        <p><i class="fa-regular fa-heart"></i> 3 likes</p>
+        <p><i class="fa-regular fa-heart" id=${movie.id}></i></p>
+        <div class="likes"></div>
         <p>${genre}</p>
         <p>Language: ${movie.language}</p>
         <p>Premiered on ${movie.premiered}</p><hr>
@@ -24,4 +27,4 @@ const database = (itemArr) => {
   });
 };
 
-export default database;
+export default database

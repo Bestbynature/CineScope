@@ -1,4 +1,4 @@
-import database from './database.js';
+import database  from './database.js';
 
 const getMovies = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
