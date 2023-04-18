@@ -24,6 +24,7 @@ const commentsFunction = async (...args) => {
     await commentPoster(args[0]);
     const commentData = await commentGetter(args[0]);
     const commentDiv = args[1].target.parentElement.previousElementSibling;
+    commentDiv.innerHTML = '';
     commentData.forEach((comment) => {
       commentDiv.innerHTML += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`;
     });
