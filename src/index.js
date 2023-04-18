@@ -1,5 +1,6 @@
 import './mystyles.css';
-import database from './database.js';
+import dbcaller from './modules/dbcaller.js';
+import commentPop from './modules/comment.js';
 
 import companyLogo from '../Assets/company_logo.png';
 
@@ -14,19 +15,15 @@ const component = () => {
 };
 logoDiv.appendChild(component());
 
-const getMovies = async () => {
-  const response = await fetch('https://api.tvmaze.com/shows');
-  const data = await response.json();
-  return data;
-};
-getMovies();
-const pageLoader = async () => {
-  const movieBank = await getMovies();
-  database(movieBank);
-};
-
 window.onload = () => {
-  pageLoader();
+  dbcaller();
 };
 
-export default pageLoader;
+document.addEventListener('click', (e) => {
+  const { id } = e.target;
+  let collector = e.target.classList;
+  collector = Array.from(collector);
+  if (collector.includes('btn-comment')) {
+    commentPop(id);
+  }
+});

@@ -1,3 +1,5 @@
+// import { commentPop, main } from './comment.js';
+
 const main = document.querySelector('main');
 
 const database = (itemArr) => {
@@ -21,16 +23,5 @@ const database = (itemArr) => {
     wrapper.appendChild(card);
   });
 };
-
-// document.addEventListener('click', (e) => {
-//   const { id } = e.target;
-//   let collector = e.target.classList;
-//   collector = Array.from(collector);
-//   if (collector.includes('btn-comment')) {
-//     commentPop(id);
-//   } else if (collector.includes('fa-heart')) {
-//     likesFunction();
-//   }
-// });
 
 export default database;
