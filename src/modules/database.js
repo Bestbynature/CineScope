@@ -1,15 +1,16 @@
-// import { commentPop, main } from './comment.js';
+import likesFunction from './likes.js';
 
 const main = document.querySelector('main');
 
-
 const database = (itemArr) => {
-  
   main.innerHTML = '';
   const wrapper = document.createElement('div');
   wrapper.className = 'wrapper';
   main.appendChild(wrapper);
-  itemArr.forEach((movie) => {
+
+  const newlist = itemArr.slice(0, 16);
+
+  newlist.forEach((movie) => {
     const genre = movie.genres.join(', ');
     const card = document.createElement('div');
     card.className = 'grid-item';
@@ -17,7 +18,7 @@ const database = (itemArr) => {
     card.innerHTML = `<img src='${movie.image.original}' alt="Movie graphic" title='${movie.name}' class="graphic">
         <p>${movie.name}</p><hr>
         <p><i class="fa-regular fa-heart" id=${movie.id}></i></p>
-        <div class="likes"></div>
+        <div class="likes" id="${movie.id}">0 likes</div>
         <p>${genre}</p>
         <p>Language: ${movie.language}</p>
         <p>Premiered on ${movie.premiered}</p><hr>
@@ -25,6 +26,9 @@ const database = (itemArr) => {
         <button type="button" id='${movie.id}' class="btn btn-reserve">Reserve</button>`;
     wrapper.appendChild(card);
   });
+
+  const likeDiv = document.querySelectorAll('.likes');
+  likesFunction(likeDiv);
 };
 
-export default database
+export default database;

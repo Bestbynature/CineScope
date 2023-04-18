@@ -3,7 +3,7 @@ import dbcaller from './modules/dbcaller.js';
 import commentPop from './modules/comment.js';
 
 import companyLogo from '../Assets/company_logo.png';
-import likesFunction from './modules/likes';
+import likesFunction from './modules/likes.js';
 
 const logoDiv = document.querySelector('.logo-div');
 const component = () => {
@@ -26,8 +26,7 @@ document.addEventListener('click', (e) => {
   collector = Array.from(collector);
   if (collector.includes('btn-comment')) {
     commentPop(id);
-  }else if(collector.includes('fa-heart')) {
-    likesFunction(id, e)
+  } else if (collector.includes('fa-heart')) {
+    likesFunction(id, e);
   }
 });
-
