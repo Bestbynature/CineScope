@@ -1,4 +1,5 @@
 import dbcaller from './dbcaller.js';
+import commentFunction from './commentFunction.js'
 
 const main = document.querySelector('main');
 
@@ -13,6 +14,7 @@ const epiGetter = async (a) => {
   const data = await response.json();
   return data;
 };
+
 
 const commentPop = async (a) => {
   const movie = await oneMovie(a);
@@ -34,11 +36,11 @@ const commentPop = async (a) => {
     <p>For more information about the movie, please click <a href="${movie.officialSite}">this link</a></p>
     <h3>Comments (2)</h3>
     <div class="user-comments"></div>
-    <form>
+    <form id="form">
         <h3>Add a comment</h3>
-        <input type="text" placeholder="Your name" required>
-        <textarea cols="30" rows="10" placeholder="Your insights"></textarea>
-        <button type="submit">Comment</button>
+        <input class="user-name" type="text" placeholder="Your name" required>
+        <textarea class="user-comment" cols="30" rows="10" placeholder="Your insights" required></textarea>
+        <button class="comment-post" type="submit">Comment</button>
     </form>`;
 
   const episodeClass = document.querySelector('.episode-class');
@@ -50,6 +52,33 @@ const commentPop = async (a) => {
   }
 
   main.scrollIntoView({ behavior: 'smooth' });
+
+  const payLoad = {
+    item_id: a,
+  };
+
+  document.querySelector('#form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('submit');
+
+    const userName = document.querySelector('.user-name').value;
+    const userComment = document.querySelector('.user-comment').value;
+
+    payLoad.username = userName;
+    payLoad.comment = userComment;
+  
+    // clear input field
+    document.querySelector('.user-name').value = '';
+    document.querySelector('.user-comment').value = '';
+  
+  });
+  
+  const commentPost = document.querySelector('.comment-post');
+  
+
+  commentPost.addEventListener('click', () => {
+    commentFunction(payLoad);
+  })
 };
 
 document.addEventListener('click', (e) => {
@@ -57,7 +86,11 @@ document.addEventListener('click', (e) => {
   collector = Array.from(collector);
   if (collector.includes('fa-circle-xmark')) {
     dbcaller();
-  }
+  } 
 });
 
 export default commentPop;
+
+// else if (collector.includes('comment-post')) {
+//   commentFunction(movieId);
+// }
