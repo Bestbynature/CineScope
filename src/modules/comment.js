@@ -76,8 +76,8 @@ const commentPop = async (a) => {
   const commentPost = document.querySelector('.comment-post');
   
 
-  commentPost.addEventListener('click', () => {
-    commentFunction(payLoad);
+  commentPost.addEventListener('click', (e) => {
+    commentFunction(payLoad, e);
   })
 };
 
