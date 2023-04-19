@@ -70,6 +70,11 @@ main {
   width: 100%;
 }
 
+.grid-item > img {
+  width: 70%;
+  height: 23vw;
+}
+
 .graphic {
   height: 15vw;
   width: 50%;
@@ -195,4 +200,11 @@ main {
 
 .user-comments {
   border: 2px solid brown;
+}
+
+@media only screen and (max-width: 790px) {
+  .grid-item > img {
+    width: 40%;
+    height: 30vw;
+  }
 }
