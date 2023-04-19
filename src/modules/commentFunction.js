@@ -23,13 +23,17 @@ const commentsFunction = async (...args) => {
   if (args.length === 3) {
     await commentPoster(args[0]);
     const commentData = await commentGetter(args[0]);
+    const { length } = commentData;
     const commentDiv = args[1].target.parentElement.previousElementSibling;
+    commentDiv.previousElementSibling.innerHTML = `<h3>Comments (${length})</h3>`;
     commentDiv.innerHTML = '';
     commentData.forEach((comment) => {
       commentDiv.innerHTML += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`;
     });
   } else {
     const commentData = await commentGetter(args[1]);
+    const { length } = commentData;
+    args[0].previousElementSibling.innerHTML = `<h3>Comments (${length})</h3>`;
     commentData.forEach((comment) => {
       args[0].innerHTML += `<p>${comment.creation_date} ${comment.username}: ${comment.comment}</p>`;
     });

@@ -1,6 +1,7 @@
 import likesFunction from './likes.js';
 
 const main = document.querySelector('main');
+const Mcounter = document.querySelector('header h1');
 
 const database = (itemArr) => {
   main.innerHTML = '';
@@ -26,6 +27,7 @@ const database = (itemArr) => {
         <button type="button" id='${movie.id}' class="btn btn-reserve">Reserve</button>`;
     wrapper.appendChild(card);
   });
+  Mcounter.innerHTML = `<h1>CineScope Movie database (${newlist.length})</h1>`;
 
   const likeDiv = document.querySelectorAll('.likes');
   likesFunction(likeDiv);

@@ -49,20 +49,16 @@ const commentPop = async (a) => {
       <a href="${episodes[count].url}"><button>Link to the episode</button></a></td></tr>`;
     count += 1;
   }
-
   main.scrollIntoView({ behavior: 'smooth' });
   const divCom = document.querySelector('.user-comments');
   const payLoad2 = { item_id: a };
   commentFunction(divCom, payLoad2);
 
   document.querySelector('.comment-post').addEventListener('click', (e) => {
-    e.preventDefault();
-
     const userName = document.querySelector('.user-name').value;
     const userComment = document.querySelector('.user-comment').value;
-
+    if (userName === '' || userComment === '') return;
     const payLoad = { item_id: a, username: userName, comment: userComment };
-
     document.querySelector('.user-name').value = '';
     document.querySelector('.user-comment').value = '';
     const b = userName;

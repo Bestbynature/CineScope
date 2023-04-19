@@ -11,6 +11,8 @@ const component = () => {
   const mycompanyLogo = new Image();
   mycompanyLogo.src = companyLogo;
   mycompanyLogo.className = 'logo';
+  mycompanyLogo.alt = 'Company Logo';
+  mycompanyLogo.title = 'Company Logo';
   element.appendChild(mycompanyLogo);
   return element;
 };
