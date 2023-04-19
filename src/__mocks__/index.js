@@ -5,8 +5,6 @@ const database = (itemArr) => {
 
 const commentsFunction = (...args) => {
   const commentData = args[0];
-  //   await commentPoster(args[0]);
-  //   const commentData = commentGetter(args[0]);
   const { length } = commentData;
   return length;
 };
