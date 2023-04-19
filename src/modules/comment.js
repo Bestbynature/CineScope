@@ -55,6 +55,7 @@ const commentPop = async (a) => {
   commentFunction(divCom, payLoad2);
 
   document.querySelector('.comment-post').addEventListener('click', (e) => {
+    e.preventDefault();
     const userName = document.querySelector('.user-name').value;
     const userComment = document.querySelector('.user-comment').value;
     if (userName === '' || userComment === '') return;
