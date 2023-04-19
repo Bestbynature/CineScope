@@ -9,19 +9,14 @@ test('sample testing of jest', () => {
 test('Getting the comment count', () => {
   const data = [
     {
-      movieName: 'Jackie',
-      movieId: 1,
-      numberOfSeasons: 3,
+      comment: 'This is nice!',
+      creation_date: '2021-01-10',
+      username: 'John',
     },
     {
-      movieName: 'Run for blood',
-      movieId: 2,
-      numberOfSeasons: 2,
-    },
-    {
-      movieName: 'Prisoners',
-      movieId: 3,
-      numberOfSeasons: 6,
+      comment: 'Great content!',
+      creation_date: '2021-02-10',
+      username: 'Jane',
     },
   ];
   expect(commentsFunction(data)).toBe(data.length);
