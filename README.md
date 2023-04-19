@@ -37,7 +37,7 @@
 
 # 📖 [CineScope] <a name="about-project"></a>
 
-**[CineScope](https://bestbynature.github.io/CineScope/)** is a web application that displays movies collection with thier details and allows users to like or comment on a particular movie. Upon clicking a particular movie, a pop-up is displayed that gives more information. The Project is achieved by using APIs. The project also implemented features that dynamically modify the DOM and add basic events and listeners...
+**[CineScope](https://bestbynature.github.io/CineScope/)** is a web application that displays movies collection with thier details and allows users to like or comment on a particular movie. Upon clicking a particular movie, a pop-up is displayed that gives more information. The Project is achieved by using APIs. The project also implemented features that dynamically modify the DOM and add basic events and listeners.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,6 +60,7 @@
 - **[Webpack]**
 - **[API]**
 - **[CSS grid and flexbox]**
+- **[Jest testing library]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,11 +182,17 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **Damilare Ismaila**
 
 - GitHub: [@githubhandle](https://github.com/Bestbynature)
 - Twitter: [@twitterhandle](https://twitter.com/Dammybest)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/damilare-ismaila-4a5a8b30/)
+
+👤 **Harriet Oteng**
+
+- GitHub: [@githubhandle](https://github.com/newhoteng)
+- Twitter: [@twitterhandle](https://twitter.com/HarrietOteng1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/harriet-oteng-75554666/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
