@@ -1,13 +1,13 @@
 jest.mock('../index.js');
 
-const { database } = require('../index.js');
+const { commentsFunction } = require('../index.js');
 
 test('sample testing of jest', () => {
   expect(1).toBe(1);
 });
 
-test('Getting the movie count', () => {
-  const a = [
+test('Getting the comment count', () => {
+  const data = [
     {
       movieName: 'Jackie',
       movieId: 1,
@@ -22,7 +22,7 @@ test('Getting the movie count', () => {
       movieName: 'Prisoners',
       movieId: 3,
       numberOfSeasons: 6,
-    }];
-
-  expect(database(a)).toBe(a.length);
+    },
+  ];
+  expect(commentsFunction(data)).toBe(data.length);
 });
