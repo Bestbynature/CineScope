@@ -220,7 +220,6 @@ main {
   filter: invert(100%);
 }
 
-
 @media only screen and (max-width: 790px) {
   .grid-item > img {
     width: 40%;
