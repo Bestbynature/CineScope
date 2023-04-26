@@ -18,7 +18,7 @@ const database = (itemArr) => {
 
     card.innerHTML = `<img src='${movie.image.original}' alt="Movie graphic" title='${movie.name}' class="graphic">
         <p>${movie.name}</p><hr>
-        <p><i class="fa-regular fa-heart" id=${movie.id}></i></p>
+        <div class="love-div" ><i class="fa-regular fa-heart" id=${movie.id}></i></div>
         <div class="likes" id="${movie.id}">0 likes</div>
         <p>${genre}</p>
         <p>Language: ${movie.language}</p>
