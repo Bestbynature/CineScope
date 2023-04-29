@@ -101,8 +101,12 @@ main {
   align-items: center;
   padding: 2rem;
   background-color: peru;
-  width: 100%;
+  width: 80%;
   border: 2px solid green;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(50px);
 }
 
 .comment h2 {
